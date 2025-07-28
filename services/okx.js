@@ -1,7 +1,4 @@
-// OKX Orderbook connector (spot, 15+ levels)
-
 export function connectOKXOrderbook(symbol, callback) {
-  // symbol: eg "BTC-USDT"
   const ws = new WebSocket("wss://ws.okx.com:8443/ws/v5/public");
   const msg = {
     op: "subscribe",

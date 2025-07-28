@@ -1,10 +1,9 @@
 export function connectBybitOrderbook(symbol, callback) {
-  // symbol: eg "BTCUSDT"
   const ws = new WebSocket("wss://stream.bybit.com/v5/public/spot");
   ws.onopen = () => {
     ws.send(JSON.stringify({
       op: "subscribe",
-      args: [`orderbook.50.${symbol}`] // 50 levels, slice on client for 15
+      args: [`orderbook.50.${symbol}`]
     }));
   };
   ws.onmessage = (evt) => {
