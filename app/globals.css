@@ -35,3 +35,31 @@ body {
 .highlight-row {
   background: #ffd6d6 !important;
 }
+
+.orderbookChartContainer {
+  display: grid;
+  grid-template-rows: 350px 240px;
+  width: 100%;
+  max-width: 700px;
+  min-width: 320px;
+  height: 600px;
+  border-radius: 8px;
+  box-shadow: 0 3px 16px 0 #cfdaf366;
+  background: #fff;
+  overflow: hidden;
+}
+
+.orderbookTableBox {
+  border-bottom: 1px solid #ececec;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+  padding: 8px;
+}
+
+.chartBox {
+  height: 100%;
+  width: 100%;
+  padding: 12px 16px 8px 16px;
+  background: #fbfafb;
+}

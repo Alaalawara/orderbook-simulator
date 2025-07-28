@@ -54,8 +54,8 @@ export default function Home() {
         <title>Orderbook Simulator</title>
       </Head>
       <h2>Real-Time Orderbook Viewer &amp; Order Simulation </h2>
-      <div style={{display: "flex", gap: 24, flexWrap: "wrap" }}>
-        <div style={{flex: "1 1 330px", minWidth: 320, maxWidth: 400}}>
+      <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
+        <div style={{ flex: "1 1 330px", minWidth: 320, maxWidth: 400 }}>
           <OrderForm
             venue={venue}
             symbol={symbol}
@@ -66,18 +66,18 @@ export default function Home() {
             <OrderImpactMetrics metrics={simMetrics} />
           }
         </div>
-        <div style={{flex: "2 1 600px", minWidth: 350}}>
-          <div>
-            <b>Venue:</b> <VenueSelector venue={venue} setVenue={handleVenueChange} />
-            <b style={{marginLeft: 12}}>Symbol:</b> {symbol}
+        <div class='orderbookChartContainer'>
+          <div class='orderbookTableBox'>
+            <OrderbookTable
+              bids={orderbook.bids || []}
+              asks={orderbook.asks || []}
+              highlightPrice={highlightPrice}
+              side={simOrder ? simOrder.side : "buy"}
+            />
           </div>
-          <OrderbookTable
-            bids={orderbook.bids || []}
-            asks={orderbook.asks || []}
-            highlightPrice={highlightPrice}
-            side={simOrder ? simOrder.side : "buy"}
-          />
-          <DepthChart bids={orderbook.bids || []} asks={orderbook.asks || []}/>
+          <div class='chartBox'>
+            <DepthChart bids={orderbook.bids || []} asks={orderbook.asks || []} />
+          </div>
         </div>
       </div>
     </div>
